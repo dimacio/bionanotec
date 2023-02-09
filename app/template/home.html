@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% from "macros.html" import latest_news%}
+
+{% block content %}
+<hr class="featurette-divider">
+
+
+    <div class="container marketing">
+        <img src="{{url_for('static',filename='images/bienvenidos.png')}}"
+         style="display: block;margin: auto;" >
+    </div>
+
+    <div class="container marketing">
+    <p><div class="container marketing"> Instagram <a href="https://instagram.com/bionanoteclab?utm_medium=copy_link"> @Bionanoteclab </a> </p>
+
+    
+    <p> Twitter <a href="https://twitter.com/bionanoteclab?lang=es"> @BioNanoTecLab </a> </p>
+  </div>
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- START JUMBOTRON-->
+
+      <div class="row featurette">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                  <p class="lead">En nuestro laboratorio combinamos la química de materiales, la bioingeniería y la electroquímica, para desarrollar dispositivos innovadores para resolver problemas biomédicos y ambientales. Con un enfoque multidisciplinario desde la química, biología molecular, ciencia de materiales y física, nuestro grupo busca generar nuevos conocimientos y tecnologías con el fin de producir nuevos métodos de diagnóstico, un mejor control de la calidad de nuestro ambiente y eventuales tratamientos de enfermedades.</p>
+            </div>
+       </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+      <!-- /END THE JUMBOTRON -->
+
+      <!-- NOVEDADES -->
+      {{latest_news(news)}}
+
+            <!-- END NOVEDADES -->
+
+<hr class="featurette-divider">
+
+<!-- Three columns of text below the jumbo -->
+
+<div class="row">
+  <div class="col-lg-4">
+    <img class="img-circle" src="{{url_for('static',filename='images/nanopartícula.png')}}" alt="doble helice" width="140" height="140" style="display: block;margin: auto;" >
+    <h2>Síntesis de nanoestructuras funcionales</h2>
+    <p>Diseño y caracterización de nanoestructuras a nivel molecular para su aplicación en sensores, dispositivos lógicos y energía.</p>
+    <p><a class="btn btn-default" href="{{ url_for('investigación') }}" role="button">View details &raquo;</a></p>
+  </div><!-- /.col-lg-4 -->
+  <div class="col-lg-4">
+    <img class="img-circle" src="{{url_for('static',filename='images/doble helice.png')}}" alt="Generic placeholder image" width="140" height="140" style="display: block;margin: auto;" >
+    <h2>Bioingeniería de moléculas de ADN funcional</h2>
+    <p>A través del proceso de seleccion in vitro obtenemos moléculas de ADN capaces de interactuar con alta afinidad y especificidad con especies de interes biológico.     </p>
+    <p><a class="btn btn-default" href="{{ url_for('investigación') }}" role="button">View details &raquo;</a></p>
+         </div><!-- /.col-lg-4 -->
+<div class="col-lg-4">
+    <img class="img-circle" src="{{url_for('static',filename='images/tecno.png')}}"  alt="Generic placeholder image" width="140" height="140" style="display: block;margin: auto;" >
+    <h2>Dispositivos de diagnóstico y monitoreo ambiental </h2>
+    <p>En el laboratorio combinamos distintas áreas del conocimiento para desarrollar dispositivos económicos, rápidos y portátiles con el fin de mejorar el cuidado de la salud y el ambiente.</p>
+    <p><a class="btn btn-default" href="{{ url_for('investigación') }}" role="button">View details &raquo;</a></p>
+  </div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2021 Bionanotec Lab  &middot; <a href="https://github.com/dimacio">Hecho por Dimacio</a> </p>
+      </footer>
+
+    </div><!-- /.container -->
+{% endblock %}
