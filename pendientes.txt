@@ -1,0 +1,2 @@
+1) Base de datos y GUI para novedades: Es la que más frecuencia de recambio va a tener.
+2) Base de datos y GUI para investigación: en la parte de area tiene que haber una dropdown list.
