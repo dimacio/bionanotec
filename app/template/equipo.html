@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+{% from "macros.html" import team_members%}
+
+<!-- 
+
+  para agregar cambiar los integrantes hay que cambiar la base de datos que se llama team.db
+
+-->
+
+
+
+<!-- START JUMBOTRON-->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container text-center" >
+          <h1 class="display-4">¿Quienes somos?</h1>
+      </div>
+ </div>
+</div>
+
+
+<!-- /END JUMBOTRON-->
+
+
+<!-- START TEAM -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7 col-md-push-5">
+    <h2 class="featurette-heading">Fernando Battaglini</h2>
+    <span class="text-muted">Director área Dispositivos y Energía</span>
+    <p class="lead">Profesor Titular, FCEN-UBA - Investigador CONICET</p>
+    <p>   battagli@qi.fcen.uba.ar / fernando.battaglini@gmail.com </p>
+    <p> Áreas de interés: Química de Materias, Química Analítica, sistemas de generación de energía, sensores.</p> 
+  </div>
+  <div class="col-md-5 col-md-pull-7">
+    <img class="featurette-image img-responsive center-block" src="{{url_for('static',filename='images/fernando.png')}}"alt="Generic placeholder image">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7 col-md-push-5">
+    <h2 class="featurette-heading"> Ana Sol Peinetti </h2>
+    <span class="text-muted">Directora área Bioingeniería de ADN funcional y su aplicación en dispositivos y materiales</span>
+    <p class="lead">Investigadora CONICET</p>
+    <p>   apeinetti@qi.fcen.uba.ar / ana.peinetti@gmail.com </p>
+    <p> Áreas de interés: Bioingeniería, Nanomateriales, Química Analítica </p> 
+  </div>
+  <div class="col-md-5 col-md-pull-7">
+    <img class="featurette-image img-responsive center-block" src="{{url_for('static',filename='images/Ana Sol Peinetti photo.png')}}"alt="Generic placeholder image">
+  </div>
+</div>
+
+
+<hr class="featurette-divider">
+
+{{team_members(team)}}
+
+
+<!-- /END TEAM -->
+
+{% endblock %}
