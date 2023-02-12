@@ -17,15 +17,19 @@ $git push heroku master
 
 ----------------------para correr en render-------------------------------
 
+startCommand tells Render which commands or files to run to start the Django app. This command is specified in the Procfile for a Heroku build.
+
 Render no lee el procfile para ver como tiene que armar la pagina así que para darle el comando correcto de gunicorn 
 tenes que ir a la parte de setting en el dashboard y definir ahí el comando de inicio (start Command)
 
-Start Command
+*Start Command*
 
 This command runs in the root directory of your app and is responsible for starting its processes. It is typically used to start a webserver for your app. It can access environment variables defined by you in Render.
 
+
 poniendo "gunicorn start_here:app_obj" logre hacer un "Deploy live" sin errores pero igual la página esta caida, no se si es porque es servicio gratuito no soporta mi página
 
+saque la idea de 
 
 -----app/routes.py-----
 Gestiona el render de los html, cada seccion que hagas tenes que agregar una ruta aca que
