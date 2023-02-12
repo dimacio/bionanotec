@@ -24,44 +24,6 @@ def investigación():
 def linea(id):
     linea = Linea.query.get_or_404(id)
     return render_template("linea.html", linea=linea)
-#aca es una en particular con un id especificado
-@app_obj.route("/nano1/")
-def nano1():
-    return render_template("nano1.html")
-    
-@app_obj.route("/nano2/")
-def nano2():
-    return render_template("nano2.html")
-
-@app_obj.route("/nano3/")
-def nano3():
-    return render_template("nano3.html")
-
-@app_obj.route("/bio1/")
-def bio1():
-    return render_template("bio1.html")
-     
-@app_obj.route("/bio2/")
-def bio2():
-    return render_template("bio2.html")
-
-
-
-@app_obj.route("/sensores1/")
-def sensores1():
-    return render_template("sensores1.html")
-     
-@app_obj.route("/sensores2/")
-def sensores2():
-    return render_template("sensores2.html")
-    
-@app_obj.route("/sensores3/")
-def sensores3():
-    return render_template("sensores3.html")
-
-@app_obj.route("/sensores4/")
-def sensores4():
-    return render_template("sensores4.html")
 
 @app_obj.route("/publicaciones/")
 def publicaciones():
