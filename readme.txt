@@ -2,7 +2,7 @@ activar el entorno:
 
 $source bionanotec_env/bin/activate
 
-----------Actualización de la pagina----------------
+----------Actualización de la pagina cuando era gratis heroku----------------
 Para agregar nuevas actualizaciones correr desde la carpeta bionanotec
 
 $git init
@@ -15,8 +15,16 @@ $heroku git:remote --app bionantec
 
 $git push heroku master
 
------------------------------------------------------
+----------------------para correr en render-------------------------------
 
+Render no lee el procfile para ver como tiene que armar la pagina así que para darle el comando correcto de gunicorn 
+tenes que ir a la parte de setting en el dashboard y definir ahí el comando de inicio (start Command)
+
+Start Command
+
+This command runs in the root directory of your app and is responsible for starting its processes. It is typically used to start a webserver for your app. It can access environment variables defined by you in Render.
+
+poniendo "gunicorn start_here:app_obj" logre hacer un "Deploy live" sin errores pero igual la página esta caida, no se si es porque es servicio gratuito no soporta mi página
 
 
 -----app/routes.py-----
