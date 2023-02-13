@@ -1,0 +1,80 @@
+{% macro papers_of_year(papers,year) %}
+
+{% for paper in papers %}
+    {% if paper.year == year %}
+    <div class="card">
+  <div class="card-body">
+
+    <h3 class="card-title"><a href={{paper.doi}}> {{ paper.name }} </a></h3>
+    <p class="text-muted">{{ paper.author}} </p>
+    <p class="card-text"><small class="text-muted">{{ paper.cite }}</small></p>
+    <p class="card-text">{{ paper.abstract }}</p>
+  </div>
+  <img src="{{url_for('static',filename=paper.grafical)}}" class="card-img-top" alt="...">
+</div>
+<hr class="featurette-divider">
+            {% endif %}
+    {% endfor %}
+
+{%endmacro%}
+
+
+{% macro button_of_year(papers,year) %}
+
+<button class="btn btn-primary btn-block " type="button" data-toggle="collapse" data-target= {{ "#collapseyear"|replace("year", year) }} aria-expanded="false" aria-controls={{ "collapseyear"|replace("year", year) }}>
+    <h3>{{year}}</h3>
+  </button>
+      <div class="collapse" id="{{ "collapseyear"|replace("year", year) }}">
+        {{papers_of_year(papers,year)}}
+      </div>
+{%endmacro%}
+
+
+{% macro team_members(team) %}
+      {% for member in team %}
+        <div class="row featurette">
+          <div class="col-md-7 col-md-push-5">
+            <h2 class="featurette-heading"> {{ member.nombre }} </h2>
+            <span class="text-muted">{{ member.puesto }} </span>
+            <p class="lead">{{ member.titulo }} </p>
+            <p>  {{ member.mail }} </p>
+            <p class="lead">{{ member.comentario }} </p>
+          </div>
+          <div class="col-md-5 col-md-pull-7">
+            <img style="max-width:70%;height: auto;max-height: 50%;" class="featurette-image img-responsive center-block" src="{{url_for('static',filename=member.imagen)}}" alt="Generic placeholder image">
+          </div>
+        </div>
+      {% endfor %}
+{%endmacro%}
+
+
+{% macro latest_news(news) %}
+      {% for new in news %}
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading"> {{new.titulo}} </h2>
+          <p class="lead"> {{new.novedad}} </p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src= {{new.imagen}} alt="Generic placeholder image">
+        </div>
+      </div>
+      
+      <div class="container marketing">
+      
+      <p> <a href= {{new.fuente}}> Fuente </a> </p>
+      </div> 
+    
+      {% endfor %}
+{%endmacro%}
+
+
+{% macro macro_linea(lineas, nombre) %}
+      {% for linea in lineas %}
+        {% if linea.categoria == nombre %}
+          <h3 > <a href="{{ url_for('linea',id=linea.id) }}"> {{linea.nombre}} </a></h3>
+        {% endif %}
+      {% endfor %}
+
+{%endmacro%}

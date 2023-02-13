@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content%}
+
+<!-- START JUMBOTRON-->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+          <h1 class="display-4">{{linea.nombre}} </h1>
+          <p class="lead">{{linea.descripcion}}</p>
+      </div>
+ </div>
+ <img class="featurette-image img-responsive center-block" src="{{url_for('static',filename=linea.imagen)}}" alt="Generic placeholder image">
+ <!--- no vayas a poner entre comillas el nombre del archivo en url_for porque sino no lo interpreta como un objeto sino como una cadena--->
+</div>
+{% endblock %}
